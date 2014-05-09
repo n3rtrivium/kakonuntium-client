@@ -1,0 +1,26 @@
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/ant-build/HelloCordova.ap_ \
+ : /Users/puchmue4/Development/workspace/FH-App/App/platforms/android/res/drawable/icon.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/res/drawable-hdpi/icon.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/res/drawable-ldpi/icon.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/res/drawable-mdpi/icon.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/res/drawable-xhdpi/icon.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/res/values/strings.xml \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/res/xml/config.xml \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/ant-build/res/drawable/icon.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/ant-build/res/drawable-hdpi/icon.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/ant-build/res/drawable-ldpi/icon.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/ant-build/res/drawable-mdpi/icon.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/ant-build/res/drawable-xhdpi/icon.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/cordova.js \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/cordova_plugins.js \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/css \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/img \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/index.html \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/js \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/css/index.css \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/img/logo.png \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/js/getJson.js \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/js/index.js \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/assets/www/js/jquery.js \
+/Users/puchmue4/Development/workspace/FH-App/App/platforms/android/ant-build/AndroidManifest.xml \
