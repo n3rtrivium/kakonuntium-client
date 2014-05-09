@@ -27,3 +27,4 @@ function displayNextLecture(){
 function getLectureId(){
 	return getNextLecture();
 }
+

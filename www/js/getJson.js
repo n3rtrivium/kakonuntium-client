@@ -1,3 +1,5 @@
+var isAdmin = true;
+
 /**
  * Gets all available Lectures
  */
@@ -51,7 +53,7 @@ function getLectureVotings(id){
  * @param piepsid Either "haui" or "pieps"
  */
 function upvotePieps(piepsid){
-	
+	console.log("Upvote"+piepsid);
 }
 
 /**
@@ -70,4 +72,9 @@ function getUserGuesses(id){
 function setServerUserId(userid){
 	
 	
+}
+
+function getCurrentStandings(lectureid){
+	$('#currHaui').text("42");
+	$('#currPieps').text("32");
 }
