@@ -1,10 +1,20 @@
 var isAdmin = true;
-
+var SERVER_URL = "http://bugs.truthfactory.tk";
 /**
  * Gets all available Lectures
  */
 function getLectures(){
-	
+	var json;
+	json = {"username":"test"};
+	$.ajax({
+		type: "GET",
+		url: "http://bugs.truthfactory.tk/lectures",
+		data: json,
+		dataType: "json"
+		})
+		.success(function(data, textStatus, jqXHR){
+			alert(data+",  "+textStatus+", "+jqXHR);
+		});
 }
 
 /**
@@ -70,7 +80,35 @@ function getUserGuesses(id){
  * @param userid The username
  */
 function setServerUserId(userid){
-	
+	$.support.cors = true;
+	var json;
+	json = {"username":"test"};
+	$.ajax({
+		type: "POST",
+		url: "http://bugs.truthfactory.tk/users",
+		data: json,
+		dataType: "json",
+		crossDomain: true,
+		contentType: "application/json; charset=utf-8"
+		})
+		//TODO: set content type to json
+		.success(function(data, textStatus, jqXHR){
+			console.log(data+",  "+textStatus+", "+jqXHR);
+		});
+//	
+//	$.ajax({
+//	     url:"https://bugs.truthfactory.tk/users",
+//	     data: json,
+//	     type:"POST",
+//	     dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
+//	     success:function(json){
+//	         // do stuff with json (in this case an array)
+//	         alert("Success");
+//	     },
+//	     error:function(){
+//	         alert("Error");
+//	     }      
+//	});
 	
 }
 

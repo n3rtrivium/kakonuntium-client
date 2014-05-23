@@ -26,33 +26,67 @@
 	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/getJson.js"></script>
 <title>Hello World</title>
 </head>
 <body>
 	<div>
 		<span id="userid"></span>
+		<br />
+		<span id="nextLec">Waiting for next Lecture...</span>
+		<br />
+		<input id="votefornext" value="Vote for next Lecture" type="submit">
+		<div id="options">
+			<span id="haui">Haui: </span>
+			<input id="voteHaui" type="text" />
+			<span id="pieps">Pieps: </span>
+			<input id="votePieps" type="text" />
+			<input id="vote" type="submit" />
+		</div>
 	</div>
-	<span id="clear">CLEAR</span>
 	<div id="idform">
 		<input id="setid" type="text" />
-		<input id="idsubmit" type="submit" name="userid">
+		<input id="idsubmit" value="Set User ID" type="submit" name="userid">
+	</div>
+	<div id="adminincrement">
+		<input type="submit" id="adminincrementHaui" value="Increment Haui" onclick="upvotePieps('haui')">
+		<input type="submit" id="adminincrementPieps" value="Increment Pieps" onclick="upvotePieps('pieps')">
+	</div>
+	<div id="currentStandings" >
+		<span>Haui: </span><span id="currHaui"></span>
+		<span>Pieps: </span><span id="currPieps"></span>
+		<input type="submit" value="Pull current Standings" onclick="getCurrentStandings(getLectureId())">
 	</div>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript">
 		$('#idform').hide();
 
 		$('#idsubmit').click(function() {
-			setUserId($('#setid'));
+			setUserId($('#setid').val());
 			$('#idform').hide();
 		});
-		
-		$('#clear').click(function(){
-			window.localStorage.clear();
-			$('#idform').show();
+
+		$('#nextLec').text(displayNextLecture());
+
+		$('#options').hide();
+
+		$('#votefornext').click(function() {
+			$('#options').show();
 		});
-		
+
+		$('#vote').click(function() {
+			console.log($('#voteHaui').val());
+			vote(getLectureId(), userid, $('#voteHaui').val(), $('#votePieps').val());
+		});
 		var id = getUserid();
-		console.log(id);
+
+		$('#adminincrement').hide();
+
+		if (isAdmin) {
+			$('#adminincrement').show();
+		}
+		
+		getLectures();
 	</script>
 </body>
 </html>

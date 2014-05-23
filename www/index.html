@@ -46,7 +46,7 @@
 	</div>
 	<div id="idform">
 		<input id="setid" type="text" />
-		<input id="idsubmit" type="submit" name="userid">
+		<input id="idsubmit" value="Set User ID" type="submit" name="userid">
 	</div>
 	<div id="adminincrement">
 		<input type="submit" id="adminincrementHaui" value="Increment Haui" onclick="upvotePieps('haui')">
@@ -85,6 +85,8 @@
 		if (isAdmin) {
 			$('#adminincrement').show();
 		}
+		
+		setServerUserId("bla");
 	</script>
 </body>
 </html>
