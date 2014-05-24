@@ -23,12 +23,12 @@ function getLectures() {
 				window.setInterval(function() {
 					getCurrentStandings();
 					getCurrentCounts();
-				}, 4000);
+				}, 60000);
 
 			}
 			if (data.winner != null) {
-				$('#winners').append("<span>Haui:"+data.winner.haui.username+"</span><br/>");
-				$('#winners').append("<span>Pieps:"+data.winner.pieps.username+"</span><br/>");
+				$('#winners').append("<span>Haui:" + data.winner.haui.username + "</span><br/>");
+				$('#winners').append("<span>Pieps:" + data.winner.pieps.username + "</span><br/>");
 			}
 		}
 	});
@@ -168,6 +168,7 @@ function setServerUserId(userid) {
 		window.localStorage.setItem("user_id", user_id);
 		window.localStorage.setItem("user_name", userid);
 		$('#idform').hide();
+		$('#userid').text($('#setid').val());
 	});
 }
 

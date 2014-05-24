@@ -23,7 +23,7 @@ function getLectures() {
 				window.setInterval(function() {
 					getCurrentStandings();
 					getCurrentCounts();
-				}, 4000);
+				}, 60000);
 
 			}
 			if (data.winner != null) {
