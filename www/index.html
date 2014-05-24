@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
 <head>
 <meta charset="utf-8" />
@@ -31,18 +13,25 @@
 </head>
 <body>
 	<div>
+		<span>User:</span>
 		<span id="userid"></span>
 		<br />
+		<span>Next available Lecture:</span>
+		<br />
 		<span id="nextLec">Waiting for next Lecture...</span>
+		<p style="display: none;" id="nextLec_id"></p>
 		<br />
 		<input id="votefornext" value="Vote for next Lecture" type="submit">
 		<div id="options">
 			<span id="haui">Haui: </span>
-			<input id="voteHaui" type="text" />
+			<input id="voteHaui" type="number" />
 			<span id="pieps">Pieps: </span>
-			<input id="votePieps" type="text" />
-			<input id="vote" type="submit" />
+			<input id="votePieps" type="number" />
+			<input id="vote" type="submit" value="Vote" />
 		</div>
+	</div>
+	<div id="currentLecture">
+		<p style="display: none;" id="currentLec"></p>
 	</div>
 	<div id="idform">
 		<input id="setid" type="text" />
@@ -52,21 +41,32 @@
 		<input type="submit" id="adminincrementHaui" value="Increment Haui" onclick="upvotePieps('haui')">
 		<input type="submit" id="adminincrementPieps" value="Increment Pieps" onclick="upvotePieps('pieps')">
 	</div>
-	<div id="currentStandings" >
-		<span>Haui: </span><span id="currHaui"></span>
-		<span>Pieps: </span><span id="currPieps"></span>
-		<input type="submit" value="Pull current Standings" onclick="getCurrentStandings(getLectureId())">
+	<div id="actual">
+		<span>Current number of "Inputs"</span>
+		<br />
+		<span>Haui: </span>
+		<span id="actualHaui"></span>
+		<span>Pieps: </span>
+		<span id="actualPieps"></span>
 	</div>
+	<div id="winners"></div>
+	<div id="currentStandings">
+		<span>Haui: </span>
+		<span id="currHaui"></span>
+		<span>Pieps: </span>
+		<span id="currPieps"></span>
+	</div>
+	<input type="submit" value="Pull current Standings" onclick="getCurrentStandings($('#currentLec').text())">
+	<div id="currentStandings" style="display: none;"></div>
+	<br>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript">
+
 		$('#idform').hide();
 
 		$('#idsubmit').click(function() {
 			setUserId($('#setid').val());
-			$('#idform').hide();
 		});
-
-		$('#nextLec').text(displayNextLecture());
 
 		$('#options').hide();
 
@@ -76,17 +76,20 @@
 
 		$('#vote').click(function() {
 			console.log($('#voteHaui').val());
-			vote(getLectureId(), userid, $('#voteHaui').val(), $('#votePieps').val());
+			vote($('#nextLec_id').text(), window.localStorage.getItem("user_id"), $('#voteHaui').val(), $('#votePieps').val());
 		});
-		var id = getUserid();
 
 		$('#adminincrement').hide();
 
 		if (isAdmin) {
 			$('#adminincrement').show();
 		}
-		
-		setServerUserId("bla");
+
+		$(document).ready(function() {
+			getNextLecture();
+			$('#userid').text(window.localStorage.getItem("user_name"));
+			getLectures();
+		});
 	</script>
 </body>
 </html>

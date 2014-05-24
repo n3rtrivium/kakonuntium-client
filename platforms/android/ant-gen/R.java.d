@@ -1,4 +1,4 @@
-/Users/puchmue4/Development/workspace/App/App/platforms/android/ant-gen/io/cordova/hellocordova/R.java \
+/Users/puchmue4/Development/workspace/App/App/platforms/android/ant-gen/at/n3rtrium/kakonuntium/R.java \
  : /Users/puchmue4/Development/workspace/App/App/platforms/android/res/drawable/icon.png \
 /Users/puchmue4/Development/workspace/App/App/platforms/android/res/drawable-hdpi/icon.png \
 /Users/puchmue4/Development/workspace/App/App/platforms/android/res/drawable-ldpi/icon.png \
