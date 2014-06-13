@@ -49,7 +49,7 @@ function getNextLecture(successCallback) {
 		var name = data.name;
 		var begin_time = data.begin_time;
 		var end_time = data.end_time;
-		$('#nextLec').text(name);
+		$('#nextLec').text(name + '; starting: ' + begin_time);
 		$('#nextLec_id').text(id);
 		getLecture(id);
 		if (successCallback !== null && successCallback !== undefined) {
